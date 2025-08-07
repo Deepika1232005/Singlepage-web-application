@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Future Self Message</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #d7d2cc, #304352);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #304352;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      padding: 10px;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    select {
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background-color: #304352;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #506d8c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Message to Future You 💌</h1>
+
+    <label for="timeline">When will you read this?</label>
+    <select id="timeline" name="timeline">
+      <option>In 1 month</option>
+      <option>In 6 months</option>
+      <option selected>In 1 year</option>
+      <option>On your next birthday</option>
+      <option>At a time you need it most</option>
+    </select>
+
+    <label for="message">Your message</label>
+    <textarea id="message" placeholder="Write something kind, hopeful, or motivating..."></textarea>
+
+    <div class="buttons">
+      <button onclick="window.print()">🖨 Print</button>
+      <button onclick="downloadMessage()">📄 Download</button>
+    </div>
+  </div>
+
+  <script>
+    function downloadMessage() {
+      const timeline = document.getElementById('timeline').value;
+      const message = document.getElementById('message').value;
+      const text = `To be opened ${timeline}\n\n${message}`;
+      const blob = new Blob([text], { type: "text/plain" });
+      const anchor = document.createElement("a");
+      anchor.href = URL.createObjectURL(blob);
+      anchor.download = "message_to_future_self.txt";
+      anchor.click();
+    }
+  </script>
+
+</body>
+</html>
