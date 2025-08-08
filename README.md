@@ -1,2 +1,3 @@
 # Singlepage-web-application
-Takes a message from the user and asks for the time period. The message will be opened at a particular time which is given by the user!!!
+The “Message to Future You” project is a creative digital concept that combines technology, self-reflection, and personal growth. The aim of the project is to allow individuals to write messages to their future selves, store them securely, and revisit them at a later date. By bridging the present and the future, this project inspires self-awareness and motivates people to stay committed to their goals.
+The “Message to Future You” project is not just a technical creation, but also a personal growth initiative. By merging creativity with web technology, it offers an innovative way to inspire, connect, and reflect over time.
